@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  
+<h1>Add 2 numbers</h1>
+<p>
+  <input type="text" name="a"> +
+  <input type="text" name="b"> =
+  <span id="result">?</span>
+<p><a href=# id="calculate">calculate sum(result from server)</a>
+
+<br/><br/>
+<h1>Multiply 2 numbers</h1>
+  <input type="text" name="aa"> *
+  <input type="text" name="bb"> =
+  <span id="result1">?</span>
+<p><a href=# id="calculateprod">calculate product(result from server)</a>
+
+
+<br/><br/>
+<h1>Find the square</h1>
+  <input type="text" name="aaa"> ^ 2 = 
+  <span id="result2">?</span>
+<p><a href=# id="calculatesquare">calculate square(result from server)</a>
+
+
+</body>
+<script type="text/javascript"
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+  var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+<script type="text/javascript">
+  $(function() {
+    var submit_form = function(e) {
+      $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+        a: $('input[name="a"]').val(),
+        b: $('input[name="b"]').val()
+      }, function(data) {
+        $('#result').text(data.result);
+        $('input[name=a]').focus().select();
+      });
+      return false;
+    };
+
+    $('a#calculate').bind('click', submit_form);
+  });
+   
+</script>
+
+<script type="text/javascript">
+   $(function() {
+    var submit_form1 = function(e) {
+      $.getJSON($SCRIPT_ROOT + '/_prod_numbers', {
+        a: $('input[name="aa"]').val(),
+        b: $('input[name="bb"]').val()
+      }, function(data) {
+        $('#result1').text(data.result);
+        $('input[name=aa]').focus().select();
+      });
+      return false;
+    };
+  
+     $('a#calculateprod').bind('click', submit_form1);
+  });
+</script>
+
+
+<script type="text/javascript">
+   $(function() {
+    var submit_form2 = function(e) {
+      $.getJSON($SCRIPT_ROOT + '/_sq_numbers', {
+        a: $('input[name="aaa"]').val()
+      }, function(data) {
+        $('#result2').text(data.result);
+        $('input[name=aaa]').focus().select();
+      });
+      return false;
+    };
+  
+     $('a#calculatesquare').bind('click', submit_form2);
+  });
+</script>
+</html>
