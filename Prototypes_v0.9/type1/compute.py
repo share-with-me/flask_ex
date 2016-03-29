@@ -1,4 +1,5 @@
 #Making use of matplotlib to plot based on input data
+import numpy
 from numpy import exp, cos, linspace
 import matplotlib.pyplot as plt
 import os, time, glob
@@ -25,5 +26,5 @@ def compute(A, b, w, T, resolution=500):
     return plotfile
 
 if __name__ == '__main__':
-    print compute(1, 0.1, 1, 20) #Makes sure that if compute.py is called directly, it will make a directory named static and the resultant png 
+    print compute(1, 0.1, 2*numpy.pi, 20) #Makes sure that if compute.py is called directly, it will make a directory named static and the resultant png 
     #generated will be stored in that directory with default compute arguments - 1,0.1,1,20
