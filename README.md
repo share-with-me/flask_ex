@@ -12,3 +12,4 @@ This repo contains some of the examples applications using python flask server. 
     7. The folder 'outputs' contains a demo file 'data.csv' which is used for the purpose of demonstrating the download.py script.<br/>
     8. The folder 'templates' contains the corresponding html files which will be rendered depending upon the script running.<br/>
     9. The folder 'uploads' is the directory where the files that are uploaded in the 'file.py' are stored.<br/>
+    10. The folder 'Matplotlib_with_flask' consists of files that make use of matplotlib to render plots via flask.<br/>
