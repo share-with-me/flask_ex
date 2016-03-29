@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>User input handling</title>
+
+    </head>
+    <body>
+        <div id="container">
+            <div class="title">
+                <h1>USer input Flask</h1>
+            </div>
+            <div id="content">
+                <form method="post" action="{{ url_for('hello') }}">
+                  <label for="yourname">Please enter your name:</label>
+                  <input type="text" name="yourname" /><br />
+                  <label for="youremail">Please enter your number:</label>
+                  <input type="number" name="yournumber" /><br />
+                  <div data-role="rangeslider">
+                   <label for="price-min">Price:</label>
+                   <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+                   <label for="price-max"></label>
+                   <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+                  </div>
+                  <input type="submit" />
+                </form>
+            </div>
+         
+            </div>
+        </div>
+    </body>
+</html>
+ 
