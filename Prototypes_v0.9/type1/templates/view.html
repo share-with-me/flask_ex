@@ -1,0 +1,22 @@
+<!--Makes use of jinja tempplate styles -->
+<html>
+<head>
+</head>
+<form method='POST' action="">
+<table>
+  {% for field in form %} <!--Iterates through the contents of the form instance and renders on the web page-->
+    <tr>
+    <td>{{ field.name }}</td><td>{{ field }}</td>
+    <td>{{ field.label }}</td>
+    </tr>
+  {% endfor %}
+</table>
+<p><input type=submit value=Compute></form></p>
+
+<p>
+{% if result != None %}
+<img src="{{ result }}" width="600">
+{% endif %}
+</p>
+</form>
+</html>
