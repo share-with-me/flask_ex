@@ -13,3 +13,5 @@ This repo contains some of the examples applications using python flask server. 
     8. The folder 'templates' contains the corresponding html files which will be rendered depending upon the script running.<br/>
     9. The folder 'uploads' is the directory where the files that are uploaded in the 'file.py' are stored.<br/>
     10. The folder 'Matplotlib_with_flask' consists of files that make use of matplotlib to render plots via flask.<br/>
+    11. The folder 'Prototypes_v0.9' contains:<br/>
+        a. 'type1' dir which has files that make use matplotlib to plot damping of oscillation where the user inputs amplitude, damping factor, frequency and time interval and the flask server generates the corresponding output image and renders it on the screen.<br/>
