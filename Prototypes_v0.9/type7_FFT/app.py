@@ -8,6 +8,9 @@ app = Flask(__name__)
 from flask_bootstrap import Bootstrap
 Bootstrap(app)
 
+@app.route('/')
+def index():
+	return render_template('view.html')
 
 
 @app.route('/1D', methods=['GET', 'POST'])
