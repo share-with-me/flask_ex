@@ -6,7 +6,7 @@ import os, time, glob
 import plotly.plotly as py
 
 def func(ff,t):
-    return np.sin(2*np.pi*ff*t) #Function for damped vibrations
+    return np.sin(50.0*2.0*np.pi*ff*t) + 0.5*np.sin(80.0*2.0*np.pi*ff*t) 
 
 def compute(Fs, ff):
     fs = Fs
