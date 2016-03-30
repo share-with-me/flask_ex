@@ -91,6 +91,7 @@ def compute_formula(A,B):
     return plotfile
 
 def compute_DCT(N):
+    plt.figure()
     t = np.linspace(0,20,N)
     x = np.exp(-t/3)*np.cos(2*t)
     y = dct(x, norm='ortho')
@@ -107,10 +108,21 @@ def compute_DCT(N):
     # 0.0718818065008
     plt.plot(t, yr, 'g+')
     plt.legend(['x', '$x_{20}$', '$x_{15}$'])
-    plt.show()
+    if not os.path.isdir('static'):
+        os.mkdir('static')
+    else:
+        # Remove old plot files
+        for filename in glob.glob(os.path.join('static', '*.png')):
+            os.remove(filename)
+    # Use time since Jan 1, 1970 in filename in order make
+    # a unique filename that the browser has not chached
+    plotfile = os.path.join('static', str(time.time()) + '.png') #Name of file - unique and uncached by the browser
+    plt.savefig(plotfile)
+    return plotfile
 
 
 def compute_IDCT(N):
+    plt.figure()
     t = np.linspace(0,20,N)
     x = np.exp(-t/3)*np.cos(2*t)
     y = dct(x, norm='ortho')
@@ -127,9 +139,20 @@ def compute_IDCT(N):
     # 0.0718818065008
     plt.plot(t, yr, 'g+')
     plt.legend(['x', '$x_{20}$', '$x_{15}$'])
-    plt.show()
+    if not os.path.isdir('static'):
+        os.mkdir('static')
+    else:
+        # Remove old plot files
+        for filename in glob.glob(os.path.join('static', '*.png')):
+            os.remove(filename)
+    # Use time since Jan 1, 1970 in filename in order make
+    # a unique filename that the browser has not chached
+    plotfile = os.path.join('static', str(time.time()) + '.png') #Name of file - unique and uncached by the browser
+    plt.savefig(plotfile)
+    return plotfile
 
 def compute_DST(N):
+    plt.figure()
     t = np.linspace(0,20,N)
     x = np.exp(-t/3)*np.cos(2*t)
     y = dst(x, norm='ortho')
@@ -146,9 +169,20 @@ def compute_DST(N):
     # 0.0718818065008
     plt.plot(t, yr, 'g+')
     plt.legend(['x', '$x_{20}$', '$x_{15}$'])
-    plt.show()
+    if not os.path.isdir('static'):
+        os.mkdir('static')
+    else:
+        # Remove old plot files
+        for filename in glob.glob(os.path.join('static', '*.png')):
+            os.remove(filename)
+    # Use time since Jan 1, 1970 in filename in order make
+    # a unique filename that the browser has not chached
+    plotfile = os.path.join('static', str(time.time()) + '.png') #Name of file - unique and uncached by the browser
+    plt.savefig(plotfile)
+    return plotfile
 
 def compute_IDST(N):
+    plt.figure()
     t = np.linspace(0,20,N)
     x = np.exp(-t/3)*np.cos(2*t)
     y = dst(x, norm='ortho')
@@ -165,32 +199,54 @@ def compute_IDST(N):
     # 0.0718818065008
     plt.plot(t, yr, 'g+')
     plt.legend(['x', '$x_{20}$', '$x_{15}$'])
-    plt.show()
+    if not os.path.isdir('static'):
+        os.mkdir('static')
+    else:
+        # Remove old plot files
+        for filename in glob.glob(os.path.join('static', '*.png')):
+            os.remove(filename)
+    # Use time since Jan 1, 1970 in filename in order make
+    # a unique filename that the browser has not chached
+    plotfile = os.path.join('static', str(time.time()) + '.png') #Name of file - unique and uncached by the browser
+    plt.savefig(plotfile)
+    return plotfile
 
 
 def compute_2D(N):
+    plt.figure()
     f, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(2, 3, sharex='col', sharey='row')
     xf = np.zeros((N,N))
     xf[0, 5] = 1
     xf[0, N-5] = 1
-    Z = ifftn(xf)
+    Z = ifft2(xf)
     ax1.imshow(xf, cmap=cm.Reds)
     ax4.imshow(np.real(Z), cmap=cm.gray)
     xf = np.zeros((N, N))
     xf[5, 0] = 1
     xf[N-5, 0] = 1
-    Z = ifftn(xf)
+    Z = ifft2(xf)
     ax2.imshow(xf, cmap=cm.Reds)
     ax5.imshow(np.real(Z), cmap=cm.gray)
     xf = np.zeros((N, N))
     xf[5, 10] = 1
     xf[N-5, N-10] = 1
-    Z = ifftn(xf)
+    Z = ifft2(xf)
     ax3.imshow(xf, cmap=cm.Reds)
     ax6.imshow(np.real(Z), cmap=cm.gray)
-    plt.show()
+    if not os.path.isdir('static'):
+        os.mkdir('static')
+    else:
+        # Remove old plot files
+        for filename in glob.glob(os.path.join('static', '*.png')):
+            os.remove(filename)
+    # Use time since Jan 1, 1970 in filename in order make
+    # a unique filename that the browser has not chached
+    plotfile = os.path.join('static', str(time.time()) + '.png') #Name of file - unique and uncached by the browser
+    plt.savefig(plotfile)
+    return plotfile
 
 def compute_ND(N):
+    plt.figure()
     f, ((ax1, ax2, ax3), (ax4, ax5, ax6)) = plt.subplots(2, 3, sharex='col', sharey='row')
     xf = np.zeros((N,N))
     xf[0, 5] = 1
@@ -210,4 +266,14 @@ def compute_ND(N):
     Z = ifftn(xf)
     ax3.imshow(xf, cmap=cm.Reds)
     ax6.imshow(np.real(Z), cmap=cm.gray)
-    plt.show()
+    if not os.path.isdir('static'):
+        os.mkdir('static')
+    else:
+        # Remove old plot files
+        for filename in glob.glob(os.path.join('static', '*.png')):
+            os.remove(filename)
+    # Use time since Jan 1, 1970 in filename in order make
+    # a unique filename that the browser has not chached
+    plotfile = os.path.join('static', str(time.time()) + '.png') #Name of file - unique and uncached by the browser
+    plt.savefig(plotfile)
+    return plotfile
