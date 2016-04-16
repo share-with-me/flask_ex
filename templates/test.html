@@ -1,0 +1,42 @@
+{% block body %}
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <div id="chart_div"  style="width: 900px; height: 300px;"></div>
+ 
+ 
+<script type='text/javascript'>
+ 
+google.load('visualization', '1', {packages: ['corechart', 'bar']});
+google.setOnLoadCallback(drawBasic);
+ 
+function drawBasic() {
+ //Making use of Google chart api for visualisation along with flask
+      var data = google.visualization.arrayToDataTable([
+        ['Currency', 'Rate', { role: 'style' }],
+        ['USD', {{rates[0]}}, 'gold'], //Using the data in rates array
+        ['GBP', {{rates[1]}}, 'silver'],
+        ['HKD', {{rates[2]}}, 'brown'],
+        ['AUD', {{rates[3]}}, 'blue']
+      ]);
+ 
+      var options = {
+        title: 'Exchange rate overview',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: '',
+          minValue: 0
+        },
+        vAxis: {
+          title: ''
+        }
+      };
+ 
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+ 
+      chart.draw(data, options);
+    }
+ 
+</script>
+ 
+ 
+{% endblock %}
