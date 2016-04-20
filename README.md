@@ -13,7 +13,7 @@ This repo contains some of the examples applications using python flask server. 
     8. The folder 'templates' contains the corresponding html files which will be rendered depending upon the script running.<br/>
     9. The folder 'uploads' is the directory where the files that are uploaded in the 'file.py' are stored.<br/>
     10. The folder 'Matplotlib_with_flask' consists of files that make use of matplotlib to render plots via flask.<br/>
-    11. The folder 'plotly' contains various sub-directories which have python files making use of plotly to plot the graphs.<br/<br/><br/>
+    11. The folder 'plotly' contains various sub-directories which have python files making use of plotly to plot the graphs. It also contains a folder named 'Python dashboard' which makes use of plotly along with a template provided by keen.io to make the dashboard. Just click on the index.html and view it in your local browser. A video of its demo can be found <a href = "https://drive.google.com/open?id=0BwrSYlOsMCyWNVZQS0FEckx4bHc">here</a>.<br/<br/><br/>
     <b>Important</b><br/>
     11. The folder 'Prototypes_v0.9' contains:<br/>
         7 directories in total which target various features of a prototype. The directory type7FFT is a very important one as it makes use of the features present in the above 6 directories as well as it has its features of its own. All of the prototypes do make use of matplotlib along with flask. A demo video of the prototype under this directory type7FFT can be found <a href = "https://drive.google.com/file/d/0BwrSYlOsMCyWQXF4TVNtVnVvS2M/view?usp=sharing" target = "_blank">here</a>.<br/><br/>
