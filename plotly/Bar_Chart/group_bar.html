@@ -1,0 +1,31 @@
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="myDiv" style="width: 480px; height: 400px;"></div>
+  <script>
+   var trace1 = {
+    x: ['apples', 'bananas', 'mangoes'],
+    y: [15, 25, 36],
+    name: 'Shop 1',
+    type: 'bar'
+  };
+
+  var trace2 = {
+    x: ['apples', 'bananas', 'mangoes'],
+    y: [27, 32, 19],
+    name: 'Shop 2',
+    type: 'bar'
+  };
+
+  var data = [trace1, trace2];
+
+  var layout = {barmode: 'group'};
+
+  Plotly.newPlot('myDiv', data, layout);
+  </script>
+</body>
+</html>

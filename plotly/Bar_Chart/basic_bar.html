@@ -1,0 +1,19 @@
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="myDiv" style="width: 480px; height: 400px;"></div>
+  <script>
+    var data = [{
+  	x: ['apples', 'bananas', 'mangoes'],
+  	y: [10, 34, 23],
+  	type: 'bar'
+	}];
+
+	Plotly.newPlot('myDiv', data);
+  </script>
+</body>
+</html>

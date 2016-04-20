@@ -1,0 +1,27 @@
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="myDiv" style="width: 480px; height: 400px;"></div>
+  <script>
+
+var data = [{
+  x: ['Feature A', 'Feature B', 'Feature C', 'Feature D', 'Feature E'],
+  y: [20, 14, 23, 25, 22],
+  marker:{
+    color: ['teal', 'red', 'teal', 'teal', 'teal']
+  },
+  type: 'bar'
+}];
+
+var layout = {
+  title: 'Some exceptional Feature'
+};
+
+Plotly.newPlot('myDiv', data, layout);
+  </script>
+</body>
+</html>
